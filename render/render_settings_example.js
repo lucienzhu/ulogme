@@ -8,12 +8,17 @@
 var title_mappings = [
 {pattern : /Google Chrome/, mapto : 'Google Chrome'},
 {pattern : /Firefox/, mapto : 'Google Chrome'}, // lol
+{pattern : /Finder/, mapto : 'Finder'}, // lol
 {pattern : /MATLAB/, mapto : 'Matlab'},
 {pattern : /Figure/, mapto : 'Matlab'},
 {pattern : /Inotebook/, mapto : 'INotebook'},
+{pattern : /iTerm/, mapto : 'Terminal'},
+{pattern : /xlzhu@/, mapto : 'Terminal'},
+{pattern : /Github/, mapto : 'Terminal'},
 {pattern : /.pdf/, mapto : 'Papers'},
+{pattern : /Papers/, mapto : 'Papers'},
 {pattern : /Gmail/, mapto : 'Gmail'},
-{pattern : /karpathy@/, mapto : 'Terminal'},
+{pattern : /Day One/, mapto : 'Journal'},
 {pattern : /Sublime Text/, mapto : 'SubText2'},
 {pattern : /\.js.*Sublime Text/, mapto : 'SubText2 Coding'},
 {pattern : /\.py.*Sublime Text/, mapto : 'SubText2 Coding'},
@@ -22,6 +27,9 @@ var title_mappings = [
 {pattern : /\.h.*Sublime Text/, mapto : 'SubText2 Coding'},
 {pattern : /__LOCKEDSCREEN/, mapto : 'Locked Screen'}, // __LOCKEDSCREEN is a special token
 {pattern : /TeXworks/, mapto : 'Latex'},
+{pattern : /TeXstudio/, mapto : 'Latex'},
+{pattern : /Evernote/, mapto : 'Evernote'},
+{pattern : /ScreenSaverEngine/, mapto : 'Locked Screen'},
 ];
 
 // be very careful with ordering in the above because titles
@@ -49,9 +57,9 @@ function mapwin(w) {
 // These groups will be rendered together in the "barcode view". For example, I like
 // to group my work stuff and play stuff together.
 var display_groups = [];
-display_groups.push(["Gmail", "Google Chrome", "MISC", "SubText2"]); // internet related
-display_groups.push(["Matlab", "SubText2 Coding", "INotebook", "Terminal", "Papers"]); // work related
-display_groups.push(["TeXworks"]); // paper writing related
+display_groups.push(["Gmail", "Google Chrome", "MISC", "Evernote"]); // internet related
+display_groups.push(["Matlab", "SubText2 Coding", "INotebook", "Terminal"]); // coding related
+display_groups.push(["Latex", "Papers", "Evernote", "Journal"]); // writing related
 display_groups.push(["Locked Screen"]); // computer not being used 
 
 // list of titles that classify as "hacking", or being productive in general
@@ -61,7 +69,7 @@ display_groups.push(["Locked Screen"]); // computer not being used
 // the implementation is currently quite hacky, experimental and contains 
 // many magic numbers.
 var hacking_titles = ["INotebook", "Terminal", "Matlab", "SubText2 Coding"];
-var draw_hacking = true; // by default turning this off
+var draw_hacking = false; // by default turning this off
 
 // draw notes row?
 var draw_notes = true;
@@ -69,4 +77,4 @@ var draw_notes = true;
 // experimental coffee levels indicator :)
 // looks for notes that mention coffee and shows 
 // levels of coffee in body over time
-var draw_coffee = false;
+var draw_coffee = true;
