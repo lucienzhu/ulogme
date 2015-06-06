@@ -22,7 +22,7 @@ def loadEvents(fname):
       ix = w.find(' ') # find first space, that's where stamp ends
       stamp = int(w[:ix])
       str = w[ix+1:]
-      if len(str) > 0
+      if len(str) > 0:
         events.append({'t':stamp, 's':str})
   except Exception, e:
     print '%s probably does not exist, setting empty events list.' % (fname, )
