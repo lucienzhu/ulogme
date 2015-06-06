@@ -14,7 +14,9 @@ var title_mappings = [
 {pattern : /Inotebook/, mapto : 'INotebook'},
 {pattern : /iTerm/, mapto : 'Terminal'},
 {pattern : /xlzhu@/, mapto : 'Terminal'},
+{pattern : /Terminal/, mapto : 'Terminal'},
 {pattern : /Github/, mapto : 'Terminal'},
+{pattern : /Microsoft/, mapto : 'MSOffice'},
 {pattern : /.pdf/, mapto : 'Papers'},
 {pattern : /Papers/, mapto : 'Papers'},
 {pattern : /Gmail/, mapto : 'Gmail'},
@@ -25,11 +27,9 @@ var title_mappings = [
 {pattern : /\.html.*Sublime Text/, mapto : 'SubText2 Coding'},
 {pattern : /\.cpp.*Sublime Text/, mapto : 'SubText2 Coding'},
 {pattern : /\.h.*Sublime Text/, mapto : 'SubText2 Coding'},
-{pattern : /__LOCKEDSCREEN/, mapto : 'Locked Screen'}, // __LOCKEDSCREEN is a special token
 {pattern : /TeXworks/, mapto : 'Latex'},
 {pattern : /TeXstudio/, mapto : 'Latex'},
 {pattern : /Evernote/, mapto : 'Evernote'},
-{pattern : /ScreenSaverEngine/, mapto : 'Locked Screen'},
 ];
 
 // be very careful with ordering in the above because titles
@@ -57,10 +57,10 @@ function mapwin(w) {
 // These groups will be rendered together in the "barcode view". For example, I like
 // to group my work stuff and play stuff together.
 var display_groups = [];
-display_groups.push(["Gmail", "Google Chrome", "MISC", "Evernote"]); // internet related
+display_groups.push(["Gmail", "Google Chrome", "Evernote"]); // internet related
 display_groups.push(["Matlab", "SubText2 Coding", "INotebook", "Terminal"]); // coding related
-display_groups.push(["Latex", "Papers", "Evernote", "Journal"]); // writing related
-display_groups.push(["Locked Screen"]); // computer not being used 
+display_groups.push(["Latex", "Papers", "Evernote", "Journal", "MSOffice"]); // writing related
+display_groups.push(["MISC"]); // computer not being used 
 
 // list of titles that classify as "hacking", or being productive in general
 // the main goal of the day is to get a lot of focused sessions of hacking
